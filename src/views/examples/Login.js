@@ -12,7 +12,7 @@ import {
   InputGroup,
   Container,
   Row,
-  Col, UncontrolledAlert,
+  Col, UncontrolledAlert, Alert,
 } from "reactstrap";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
 import {Link, useParams} from "react-router-dom";
@@ -20,8 +20,9 @@ import {Link, useParams} from "react-router-dom";
 const Login = () => {
   const mainRef = useRef(null);
   const { student_no } = useParams();
+  const [warning, setWarning] = useState("");
   const [account, setAccount] = useState({
-    ui_student_no: student_no,
+    ui_student_no: student_no || "",
     ui_pw: ""
   });
 
@@ -32,6 +33,16 @@ const Login = () => {
       mainRef.current.scrollTop = 0;
     }
   }, [mainRef]);
+
+  const loginSubmit = () => {
+    if (account.ui_student_no === "" || !(/^[0-9]{9}$/.test(account.ui_student_no))) {
+      setWarning("Student ID");
+      return;
+    } else if (account.ui_pw === "" || !(/^[a-z0-9{}[\]/?.,;:|)*~`!^\-_+<>@#$%&\\=('"]{10,20}$/.test(account.ui_pw))) {
+      setWarning("Password");
+      return;
+    }
+  }
 
   const handleChange = (e) => {
     setAccount({
@@ -68,11 +79,16 @@ const Login = () => {
                               <i className="ni ni-like-2" />
                             </span>{" "}
                             <span className="alert-inner--text">
-                              <strong>성공!</strong> 가입을 축하드립니다!
+                              <strong>축하합니다!</strong> 가입을 성공하셨습니다!
                             </span>
                           </UncontrolledAlert>
                       :
                       <></>}
+                      <Alert color="danger" isOpen={warning !== ""} toggle={() => {setWarning("")}}>
+                        <span className="alert-inner--text">
+                          {warning}이(가) 형식에 맞지 않습니다.
+                        </span>
+                      </Alert>
                       <div className="text-center text-muted mb-4">
                         <small>Or sign in with credentials</small>
                       </div>
@@ -111,7 +127,12 @@ const Login = () => {
                           </InputGroup>
                         </FormGroup>
                         <div className="text-center">
-                          <Button className="my-4" color="primary" type="button">
+                          <Button
+                              className="my-4"
+                              color="primary"
+                              type="button"
+                              onClick={loginSubmit}
+                          >
                             Sign in
                           </Button>
                         </div>

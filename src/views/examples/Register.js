@@ -99,7 +99,7 @@ const Register = () => {
                     <CardBody className="px-lg-5 py-lg-5">
                       <Alert color="danger" isOpen={warning !== ""} toggle={() => {setWarning("")}}>
                         <span className="alert-inner--text">
-                          <strong>경고!</strong> {warning}이(가) 형식에 맞지 않습니다.
+                          {warning}이(가) 형식에 맞지 않습니다.
                         </span>
                       </Alert>
                       <div className="text-center text-muted mb-4">
