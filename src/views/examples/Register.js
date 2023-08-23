@@ -13,8 +13,9 @@ import {
   Col, CardHeader, CardBody, Alert
 } from "reactstrap";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
-import { createAccount } from "assets/util/auth/axiosAccount";
+import { createAccount } from "assets/util/auth/AuthAccount";
 import {useNavigate} from "react-router-dom";
+import {regular} from "../../assets/util/RegularExpression";
 
 const Register = () => {
   const mainRef = useRef(null);
@@ -40,25 +41,25 @@ const Register = () => {
   }, [mainRef]);
 
   const createAccountSubmit = () => {
-    if (userData.ui_student_no === "" || !(/^[0-9]*$/.test(userData.ui_student_no))) {
+    if (!userData.ui_student_no || !regular.studentNo(userData.ui_student_no)) {
       setWarning("학번");
       return;
-    } else if (userData.ui_group === "") {
+    } else if (!userData.ui_group) {
       setWarning("신분");
       return;
-    } else if (userData.ui_name === "") {
+    } else if (!userData.ui_name) {
       setWarning("이름");
       return;
-    } else if (userData.ui_birth === "") {
+    } else if (!userData.ui_birth) {
       setWarning("생년월일");
       return;
-    } else if (userData.ui_email === "" || !(/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])+@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])+(\.([a-zA-Z]{2,3}))?\.[a-zA-Z]{2,3}$/.test(userData.ui_email))) {
+    } else if (!userData.ui_email || !regular.email(userData.ui_email)) {
       setWarning("이메일");
       return;
-    } else if (userData.ui_phone_no === "" || !(/^010([0-9]{4})([0-9]{4})$/.test(userData.ui_phone_no))) {
+    } else if (!userData.ui_phone_no || !regular.phoneNo(userData.ui_phone_no)) {
       setWarning("휴대폰 번호");
       return;
-    } else if (userData.ui_pw === "" || !(/^[a-z0-9{}[\]/?.,;:|)*~`!^\-_+<>@#$%&\\=('"]{10,20}$/.test(userData.ui_pw))) {
+    } else if (!userData.ui_pw || !regular.password(userData.ui_pw)) {
       setWarning("비밀번호");
       return;
     }

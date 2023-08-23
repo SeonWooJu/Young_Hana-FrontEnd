@@ -16,8 +16,9 @@ import {
 } from "reactstrap";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
 import {Link, useParams} from "react-router-dom";
-import {login} from "../../assets/util/auth/axiosAccount";
+import {login} from "../../assets/util/auth/AuthAccount";
 import {Cookies} from "react-cookie";
+import {regular} from "../../assets/util/RegularExpression";
 
 const Login = () => {
   const mainRef = useRef(null);
@@ -37,10 +38,10 @@ const Login = () => {
   }, [mainRef]);
 
   const loginSubmit = () => {
-    if (account.ui_student_no === "" || !(/^[0-9]{9}$/.test(account.ui_student_no))) {
+    if (account.ui_student_no === "" || !regular.studentNo(account.ui_student_no)) {
       setWarning("학번");
       return;
-    } else if (account.ui_pw === "" || !(/^[a-z0-9{}[\]/?.,;:|)*~`!^\-_+<>@#$%&\\=('"]{10,20}$/.test(account.ui_pw))) {
+    } else if (account.ui_pw === "" || !regular.password(account.ui_pw)) {
       setWarning("비밀번호");
       return;
     }
