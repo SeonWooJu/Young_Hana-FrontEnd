@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
@@ -13,6 +13,11 @@ import Register from "views/examples/Register.js";
 import {CookiesProvider} from "react-cookie";
 
 function App() {
+
+    const checkAccessToken = () => {
+
+    }
+
     return (
         <BrowserRouter>
             <Routes>

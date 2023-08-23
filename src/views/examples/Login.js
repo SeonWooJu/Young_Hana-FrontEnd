@@ -16,7 +16,7 @@ import {
 } from "reactstrap";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
 import {Link, useParams} from "react-router-dom";
-import {login} from "../../assets/util/auth/AuthAccount";
+import {Account} from "../../assets/util/auth/AuthAccount";
 import {Cookies} from "react-cookie";
 import {regular} from "../../assets/util/RegularExpression";
 
@@ -46,9 +46,9 @@ const Login = () => {
       return;
     }
 
-    login(account)
+    Account.singIn(account)
         .then((res) => {
-          new Cookies().set("access_token", res.data, { path: "/" });
+          new Cookies().set("access_token", res.data.data, { path: "/" });
           console.log(new Cookies().get("access_token"));
         })
         .catch(() => {

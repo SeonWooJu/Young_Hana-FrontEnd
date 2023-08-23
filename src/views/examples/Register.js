@@ -13,7 +13,7 @@ import {
   Col, CardHeader, CardBody, Alert
 } from "reactstrap";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
-import { createAccount } from "assets/util/auth/AuthAccount";
+import {Account} from "assets/util/auth/AuthAccount";
 import {useNavigate} from "react-router-dom";
 import {regular} from "../../assets/util/RegularExpression";
 
@@ -64,7 +64,7 @@ const Register = () => {
       return;
     }
 
-    createAccount(userData)
+    Account.singUp(userData)
         .then((res) => {
           navigate(`/login/${res.data.data}`);
         })
