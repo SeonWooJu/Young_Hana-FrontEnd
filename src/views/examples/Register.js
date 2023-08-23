@@ -40,7 +40,7 @@ const Register = () => {
   }, [mainRef]);
 
   const createAccountSubmit = () => {
-    if (userData.ui_student_no === "" || !(/^[0-9]{9}$/.test(userData.ui_student_no))) {
+    if (userData.ui_student_no === "" || !(/^[0-9]*$/.test(userData.ui_student_no))) {
       setWarning("학번");
       return;
     } else if (userData.ui_group === "") {
