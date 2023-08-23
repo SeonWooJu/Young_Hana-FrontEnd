@@ -66,7 +66,7 @@ const Register = () => {
 
     createAccount(userData)
         .then((res) => {
-          navigate(`/login/${res.data}`);
+          navigate(`/login/${res.data.data}`);
         })
         .catch(() => {
           setWarning("가입 정보")
@@ -225,7 +225,7 @@ const Register = () => {
                         </FormGroup>
                         <div className="text-muted font-italic">
                           <small>
-                            ※ 비밀번호의 길이는 10 ~ 20글자 및 영어(소문자), 숫자, 특수문자의 조합을 사용해야 합니다.
+                            ※ 비밀번호의 길이는 10 ~ 20글자 및 영문,  숫자, 특수문자(@, #, $, %, ^, &, !)의 조합을 사용해야 합니다.
                           </small>
                         </div>
                         <FormGroup>

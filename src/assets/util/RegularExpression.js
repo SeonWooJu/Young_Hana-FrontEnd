@@ -9,6 +9,6 @@ export const regular = {
         return /^010([0-9]{4})([0-9]{4})$/.test(phone_no);
     },
     password: (pw) => {
-        return /^[a-z0-9{}[\]/?.,;:|)*~`!^\-_+<>@#$%&\\=('"]{10,20}$/.test(pw);
+        return /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@#$%^&!])[A-Za-z\d@#$%^&!]{10,20}$/.test(pw);
     }
 }
