@@ -16,6 +16,8 @@ import {
 } from "reactstrap";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
 import {Link, useParams} from "react-router-dom";
+import {login} from "../../assets/util/auth/axiosAccount";
+import {Cookies} from "react-cookie";
 
 const Login = () => {
   const mainRef = useRef(null);
@@ -36,12 +38,21 @@ const Login = () => {
 
   const loginSubmit = () => {
     if (account.ui_student_no === "" || !(/^[0-9]{9}$/.test(account.ui_student_no))) {
-      setWarning("Student ID");
+      setWarning("학번");
       return;
     } else if (account.ui_pw === "" || !(/^[a-z0-9{}[\]/?.,;:|)*~`!^\-_+<>@#$%&\\=('"]{10,20}$/.test(account.ui_pw))) {
-      setWarning("Password");
+      setWarning("비밀번호");
       return;
     }
+
+    login(account)
+        .then((res) => {
+          new Cookies().set("access_token", res.data, { path: "/" });
+          console.log(new Cookies().get("access_token"));
+        })
+        .catch(() => {
+          setWarning("Account");
+        });
   }
 
   const handleChange = (e) => {
@@ -101,7 +112,7 @@ const Login = () => {
                               </InputGroupText>
                             </InputGroupAddon>
                             <Input
-                                placeholder="Student ID"
+                                placeholder="학번"
                                 type="text"
                                 name="student_no"
                                 value={account.ui_student_no}
@@ -117,7 +128,7 @@ const Login = () => {
                               </InputGroupText>
                             </InputGroupAddon>
                             <Input
-                                placeholder="Password"
+                                placeholder="비밀번호"
                                 type="password"
                                 autoComplete="off"
                                 name="pw"

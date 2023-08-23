@@ -23,6 +23,7 @@ const Register = () => {
   const [warning, setWarning] = useState("");
   const [userData, setUserData] = useState({
     ui_student_no: "",
+    ui_group: "",
     ui_name: "",
     ui_birth: "",
     ui_email: "",
@@ -40,22 +41,25 @@ const Register = () => {
 
   const createAccountSubmit = () => {
     if (userData.ui_student_no === "" || !(/^[0-9]{9}$/.test(userData.ui_student_no))) {
-      setWarning("Student ID");
+      setWarning("학번");
+      return;
+    } else if (userData.ui_group === "") {
+      setWarning("신분");
       return;
     } else if (userData.ui_name === "") {
-      setWarning("Name");
+      setWarning("이름");
       return;
     } else if (userData.ui_birth === "") {
-      setWarning("Birth");
+      setWarning("생년월일");
       return;
-    } else if (userData.ui_email === "" || !(/^[a-z0-9]+@[a-z]+(\.([a-z]{2,3}))?\.[a-z]{2,3}$/.test(userData.ui_email))) {
-      setWarning("Email");
+    } else if (userData.ui_email === "" || !(/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])+@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])+(\.([a-zA-Z]{2,3}))?\.[a-zA-Z]{2,3}$/.test(userData.ui_email))) {
+      setWarning("이메일");
       return;
     } else if (userData.ui_phone_no === "" || !(/^010([0-9]{4})([0-9]{4})$/.test(userData.ui_phone_no))) {
-      setWarning("Phone No");
+      setWarning("휴대폰 번호");
       return;
     } else if (userData.ui_pw === "" || !(/^[a-z0-9{}[\]/?.,;:|)*~`!^\-_+<>@#$%&\\=('"]{10,20}$/.test(userData.ui_pw))) {
-      setWarning("Password");
+      setWarning("비밀번호");
       return;
     }
 
@@ -64,7 +68,7 @@ const Register = () => {
           navigate(`/login/${res.data}`);
         })
         .catch(() => {
-          setWarning("User Data")
+          setWarning("가입 정보")
         });
   };
 
@@ -119,7 +123,7 @@ const Register = () => {
                               </InputGroupText>
                             </InputGroupAddon>
                             <Input
-                                placeholder="Student ID"
+                                placeholder="학번"
                                 type="text"
                                 name="student_no"
                                 value={userData.ui_student_no}
@@ -131,11 +135,33 @@ const Register = () => {
                           <InputGroup className="input-group-alternative mb-3">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
+                                <i className="ni ni-badge" />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                                type="select"
+                                name="group"
+                                value={userData.ui_group}
+                                onChange={handleChange}
+                            >
+                              <option value="">신분 선택</option>
+                              <option value="학부생">예비학기대상자, 학부생, 학부졸업생</option>
+                              <option value="대학원생">대학원생, 대학원졸업생</option>
+                              <option value="교수">교수</option>
+                              <option value="직원">직원</option>
+                              <option value="외부인">외부인</option>
+                            </Input>
+                          </InputGroup>
+                        </FormGroup>
+                        <FormGroup>
+                          <InputGroup className="input-group-alternative mb-3">
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
                                 <i className="ni ni-circle-08" />
                               </InputGroupText>
                             </InputGroupAddon>
                             <Input
-                                placeholder="Name"
+                                placeholder="이름"
                                 type="text"
                                 name="name"
                                 value={userData.ui_name}
@@ -151,7 +177,7 @@ const Register = () => {
                               </InputGroupText>
                             </InputGroupAddon>
                             <Input
-                                placeholder="Birth"
+                                placeholder="생년월일"
                                 type="date"
                                 name="birth"
                                 value={userData.ui_birth}
@@ -167,7 +193,7 @@ const Register = () => {
                               </InputGroupText>
                             </InputGroupAddon>
                             <Input
-                                placeholder="Email"
+                                placeholder="이메일"
                                 type="email"
                                 name="email"
                                 value={userData.ui_email}
@@ -188,7 +214,7 @@ const Register = () => {
                               </InputGroupText>
                             </InputGroupAddon>
                             <Input
-                                placeholder="Phone Number"
+                                placeholder="휴대폰 번호"
                                 type="text"
                                 name="phone_no"
                                 value={userData.ui_phone_no}
@@ -209,7 +235,7 @@ const Register = () => {
                               </InputGroupText>
                             </InputGroupAddon>
                             <Input
-                                placeholder="Password"
+                                placeholder="비밀번호"
                                 type="password"
                                 autoComplete="off"
                                 name="pw"

@@ -10,6 +10,7 @@ import Index from "views/Index.js";
 import Login from "views/examples/Login.js";
 import Profile from "views/examples/Profile.js";
 import Register from "views/examples/Register.js";
+import {CookiesProvider} from "react-cookie";
 
 function App() {
     return (
@@ -27,4 +28,4 @@ function App() {
     );
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<CookiesProvider><App /></CookiesProvider>, document.getElementById("root"));

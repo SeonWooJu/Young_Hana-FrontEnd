@@ -3,6 +3,20 @@ import axios from "axios";
 export const LOGIN_URL = `${process.env.REACT_APP_API_SERVER_URL}/account/sing-in`;
 export const CREATE_ACCOUNT_URL = `${process.env.REACT_APP_API_SERVER_URL}/account/sing-up`
 
+export const login = (account) => {
+    account = {
+        ...account,
+        ui_student_no: Number(account.ui_student_no)
+    }
+
+    return axios.post(LOGIN_URL, account, {
+        headers: {
+            "access-control-allow-origin": process.env.REACT_APP_URL,
+            "access-control-allow-headers": '*'
+        }
+    });
+}
+
 export const createAccount = (userData) => {
     userData = {
         ...userData,
