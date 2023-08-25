@@ -49,7 +49,7 @@ const Login = () => {
     Account.singIn(account)
         .then((res) => {
           new Cookies().set("access_token", res.data.data, { path: "/" });
-          console.log(new Cookies().get("access_token"));
+          window.location.replace("/");
         })
         .catch(() => {
           setWarning("Account");

@@ -22,7 +22,6 @@ export const Account = {
             ...userData,
             ui_student_no: Number(userData.ui_student_no)
         };
-        console.log(LOGIN_URL);
         return axios.post(CREATE_ACCOUNT_URL, userData, {
             headers: {
                 "access-control-allow-origin": process.env.REACT_APP_URL,
