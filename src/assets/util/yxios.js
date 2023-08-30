@@ -1,12 +1,12 @@
 import axios from "axios";
 import {Cookies} from "react-cookie";
 
-const instance = axios.create({
+const yxios = axios.create({
     baseURL: process.env.REACT_APP_API_SERVER_URL,
     timeout: 100000,
 })
 
-instance.interceptors.request.use(
+yxios.interceptors.request.use(
     (config) => {
         const accessToken = new Cookies().get("access_token");
 
@@ -21,4 +21,15 @@ instance.interceptors.request.use(
     }
 );
 
-export default instance;
+yxios.interceptors.response.use(
+    (response) => {
+        const res = response.data;
+        return res;
+    },
+    (error) => {
+        console.log(error);
+        return Promise.reject(error);
+    }
+)
+
+export default yxios;

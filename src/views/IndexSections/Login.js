@@ -66,13 +66,13 @@ const Login = () => {
                     <div className="btn-wrapper text-center">
                       <Button className="btn-neutral btn-icon" color="default" href="#pablo" onClick={(e) => e.preventDefault()}>
                       <span className="btn-inner--icon mr-1">
-                        <img alt="..." src={require("../argon-design-system-react-master/src/assets/img/icons/common/github.svg")} />
+                        <img alt="..." src={require("../../assets/img/icons/common/github.svg")} />
                       </span>
                         <span className="btn-inner--text">Github</span>
                       </Button>
                       <Button className="btn-neutral btn-icon" color="default" href="#pablo" onClick={(e) => e.preventDefault()}>
                       <span className="btn-inner--icon mr-1">
-                        <img alt="..." src={require("../argon-design-system-react-master/src/assets/img/icons/common/google.svg")} />
+                        <img alt="..." src={require("../../assets/img/icons/common/google.svg")} />
                       </span>
                         <span className="btn-inner--text">Google</span>
                       </Button>

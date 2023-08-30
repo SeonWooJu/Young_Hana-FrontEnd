@@ -5,7 +5,7 @@ const Hero = () => {
     return (
       <>
         <div className="position-relative">
-          {/* Hero for FREE version */}
+          {/* IndexContent for FREE version */}
           <section className="section section-hero section-shaped">
             {/* Background circles */}
             <div className="shape shape-style-1 shape-default">
@@ -27,7 +27,7 @@ const Hero = () => {
                     <img
                       alt="..."
                       className="img-fluid"
-                      src={require("../argon-design-system-react-master/src/assets/img/brand/argon-react-white.png")}
+                      src={require("../../assets/img/brand/argon-react-white.png")}
                       style={{ width: "200px" }}
                     />
                     <p className="lead text-white">
@@ -70,7 +70,7 @@ const Hero = () => {
                         alt="..."
                         className="ml-1"
                         style={{ height: "28px" }}
-                        src={require("../argon-design-system-react-master/src/assets/img/brand/creativetim-white-slim.png")}
+                        src={require("../../assets/img/brand/creativetim-white-slim.png")}
                       />
                     </div>
                   </Col>

@@ -8,7 +8,7 @@ import {
   Col,
 } from "reactstrap";
 
-const SimpleFooter = () => {
+const BasicFooter = () => {
   return (
       <footer className="footer">
         <Container>
@@ -73,4 +73,4 @@ const SimpleFooter = () => {
   );
 };
 
-export default SimpleFooter;
+export default BasicFooter;

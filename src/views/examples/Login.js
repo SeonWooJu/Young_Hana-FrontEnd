@@ -14,7 +14,7 @@ import {
   Row,
   Col, UncontrolledAlert, Alert,
 } from "reactstrap";
-import SimpleFooter from "components/Footers/SimpleFooter.js";
+import BasicFooter from "components/Footers/BasicFooter.js";
 import {Link, useParams} from "react-router-dom";
 import {Account} from "../../assets/util/auth/AuthAccount";
 import {Cookies} from "react-cookie";
@@ -163,7 +163,7 @@ const Login = () => {
             </Container>
           </section>
         </main>
-        <SimpleFooter />
+        <BasicFooter />
       </>
   );
 };

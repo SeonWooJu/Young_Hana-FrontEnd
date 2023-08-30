@@ -12,7 +12,7 @@ import {
   Row,
   Col, CardHeader, CardBody, Alert
 } from "reactstrap";
-import SimpleFooter from "components/Footers/SimpleFooter.js";
+import BasicFooter from "components/Footers/BasicFooter.js";
 import {Account} from "assets/util/auth/AuthAccount";
 import {useNavigate} from "react-router-dom";
 import {regular} from "../../assets/util/RegularExpression";
@@ -284,7 +284,7 @@ const Register = () => {
             </Container>
           </section>
         </main>
-        <SimpleFooter />
+        <BasicFooter />
       </>
   );
 };

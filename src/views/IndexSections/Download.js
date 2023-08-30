@@ -45,6 +45,7 @@ const Download = () => {
                         href="https://www.creative-tim.com/product/argon-design-system?ref=adsr-landing-page"
                         id="tooltip255035741"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         <img
                           alt="..."
@@ -61,6 +62,7 @@ const Download = () => {
                         href="https://www.creative-tim.com/product/vue-argon-design-system?ref=adsr-landing-page"
                         id="tooltip265846671"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         <img
                           alt="..."
@@ -77,6 +79,7 @@ const Download = () => {
                         href="https://www.creative-tim.com/product/argon-design-system-angular?ref=adsr-landing-page"
                         id="tooltip233150499"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         <img
                           alt="..."
@@ -93,6 +96,7 @@ const Download = () => {
                         href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
                         id="tooltip308866163"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         <img
                           alt="..."
@@ -110,6 +114,7 @@ const Download = () => {
                         href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
                         id="tooltip76119384"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         <img
                           alt="..."
@@ -126,6 +131,7 @@ const Download = () => {
                         href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
                         id="tooltip646643508"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         <img
                           alt="..."

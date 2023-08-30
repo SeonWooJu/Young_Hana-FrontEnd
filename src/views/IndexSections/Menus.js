@@ -43,7 +43,7 @@ const Menus = () => {
                           <Link to="/">
                             <img
                                 alt="..."
-                                src={require("../argon-design-system-react-master/src/assets/img/brand/argon-react.png")}
+                                src={require("../../assets/img/brand/argon-react.png")}
                             />
                           </Link>
                         </Col>
@@ -129,7 +129,7 @@ const Menus = () => {
                           <Link to="/">
                             <img
                                 alt="..."
-                                src={require("../argon-design-system-react-master/src/assets/img/brand/argon-react.png")}
+                                src={require("../../assets/img/brand/argon-react.png")}
                             />
                           </Link>
                         </Col>

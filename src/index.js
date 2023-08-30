@@ -10,6 +10,7 @@ import Index from "views/Index.js";
 import Login from "views/examples/Login.js";
 import Profile from "views/examples/Profile.js";
 import Register from "views/examples/Register.js";
+import CommunityBoard from "views/examples/CommunityBoard.js";
 import {CookiesProvider} from "react-cookie";
 import yxios from "./assets/util/yxios.js";
 
@@ -18,7 +19,7 @@ function App() {
 
     useEffect(() => {
         yxios.get("/v1/helloworld")
-            .then((res) => {
+            .then(() => {
                 setCheckAccessToken(true);
             })
             .catch(() => {
@@ -41,6 +42,7 @@ function App() {
                     <Route path="/" element={<Navigate replace to="/index" />} />
                     <Route path="/index" element={<Index />} />
                     <Route path="/profile" element={<Profile />} />
+                    <Route path="/board/:topic" element={<CommunityBoard />} />
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
             }

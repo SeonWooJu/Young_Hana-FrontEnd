@@ -6,8 +6,8 @@ import {
   Row,
   Col
 } from "reactstrap";
-import DemoNavbar from "components/Navbars/DemoNavbar.js";
-import SimpleFooter from "components/Footers/SimpleFooter.js";
+import BasicNavbar from "components/Navbars/BasicNavbar.js";
+import BasicFooter from "components/Footers/BasicFooter.js";
 
 const Profile = () => {
   const mainRef = useRef(null);
@@ -22,7 +22,7 @@ const Profile = () => {
 
   return (
       <>
-        <DemoNavbar />
+        <BasicNavbar />
         <main className="profile-page" ref={mainRef}>
           <section className="section-profile-cover section-shaped my-0">
             {/* Circles background */}
@@ -149,7 +149,7 @@ const Profile = () => {
             </Container>
           </section>
         </main>
-        <SimpleFooter />
+        <BasicFooter />
       </>
   );
 };
