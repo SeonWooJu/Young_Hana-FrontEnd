@@ -24,4 +24,4 @@ jobs:
       - name: Docker Image Build
         run: docker build -t younghnan_frontend .
       - name: Docker Image Stop/Start
-        run: docker stop younghnan_frontend ; docker rm younghnan_frontend ; docker run -d --name younghnan_frontend -p 80:80 younghnan_frontend ;
+        run: CI=false docker stop younghnan_frontend ; docker rm younghnan_frontend ; docker run -d --name younghnan_frontend -p 80:80 younghnan_frontend ;
