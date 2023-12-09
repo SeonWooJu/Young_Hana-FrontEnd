@@ -20,9 +20,7 @@ jobs:
       - name: React ReBuild node-sass
         run: npm rebuild node-sass
       - name: React Build
-        run: npm run build
-	env:
-          CI: false
+        run: CI=false npm run build
       - name: Docker Image Build
         run: docker build -t younghnan_frontend .
       - name: Docker Image Stop/Start
