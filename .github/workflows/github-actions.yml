@@ -1,0 +1,22 @@
+name: CI/CD React & Docker
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  build:
+    name: Build and React Project
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Young_Hana Securyity File Copy 
+        run: cp /drive/Young_Hana-Security/Front/env ./
+      - name: React Build
+        run: npm install ; npm run build ;
+      - name: Docker Image Build
+        run: docker build -t younghnan_frontend .
+      - name: Docker Image Stop/Start
+        run: docker stop younghnan_frontend ; docker rm younghnan_frontend ; docker run -d --name younghnan_frontend -p 80:80 younghnan_frontend ;
