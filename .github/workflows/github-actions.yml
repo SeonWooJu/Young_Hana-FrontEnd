@@ -12,6 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - run: users
       - name: Young_Hana Securyity File Copy 
         run: cp /drive/Young_Hana-Security/Front/env ./
       - name: React Build
