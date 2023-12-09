@@ -22,7 +22,7 @@ jobs:
       - name: React Build
         run: npm run build
 	env:
-          CI: ""
+          CI: false
       - name: Docker Image Build
         run: docker build -t younghnan_frontend .
       - name: Docker Image Stop/Start
