@@ -21,6 +21,8 @@ jobs:
         run: npm rebuild node-sass
       - name: React Build
         run: npm run build
+	env:
+          CI: ""
       - name: Docker Image Build
         run: docker build -t younghnan_frontend .
       - name: Docker Image Stop/Start
