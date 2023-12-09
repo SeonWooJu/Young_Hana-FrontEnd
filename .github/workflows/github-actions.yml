@@ -15,8 +15,12 @@ jobs:
       - run: users
       - name: Young_Hana Securyity File Copy 
         run: cp /drive/Young_Hana-Security/FrontEnd/env ./
+      - name: React NPM Install
+        run: npm install
+      - name: React ReBuild node-sass
+        run: npm rebuild node-sass
       - name: React Build
-        run: npm install ; npm rebuild node-sass ; npm run build ;
+        run: npm run build
       - name: Docker Image Build
         run: docker build -t younghnan_frontend .
       - name: Docker Image Stop/Start
