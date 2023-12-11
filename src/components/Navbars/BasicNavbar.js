@@ -90,11 +90,11 @@ const BasicNavbar = () => {
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">게시판</span>
                     </DropdownToggle>
-                    <DropdownMenu style={{"color":"black"}}>
+                    <DropdownMenu>
                       <DropdownItem to="/board/1" tag={Link}>
                         <div>
                           <i className="fa fa-bell" />
-                          <span className="nav-link-inner--text d-lg-none ml-2">
+                          <span className="nav-link-inner--text d-lg-none ml-2 text-dark">
                             공지사항
                           </span>
                         </div>
@@ -102,7 +102,7 @@ const BasicNavbar = () => {
                       <DropdownItem to="/board/2" tag={Link}>
                         <div>
                           <i className="fa fa-question" />
-                          <span className="nav-link-inner--text d-lg-none ml-2">
+                          <span className="nav-link-inner--text d-lg-none ml-2 text-dark">
                             질문
                           </span>
                         </div>
@@ -110,7 +110,7 @@ const BasicNavbar = () => {
                       <DropdownItem to="/board/3" tag={Link}>
                         <div>
                           <i className="fa fa-space-shuttle" />
-                          <span className="nav-link-inner--text d-lg-none ml-2">
+                          <span className="nav-link-inner--text d-lg-none ml-2 text-dark">
                             자유
                           </span>
                         </div>
