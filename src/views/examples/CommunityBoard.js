@@ -17,7 +17,6 @@ import CommunityBoardTable from "../../components/Contents/CommunityBoardTable";
 function CommunityBoard() {
     const mainRef = useRef(null);
     const { topic } = useParams();
-    const [createModal, setCreateModal] = useState(false);
 
     useEffect(() => {
         document.documentElement.scrollTop = 0;
@@ -35,8 +34,6 @@ function CommunityBoard() {
                 <CommunityBoardContent topic={topic} />
                 <CommunityBoardTable
                     topic={topic}
-                    createModal={createModal}
-                    setCreateModal={setCreateModal}
                 />
             </main>
             <BasicFooter />

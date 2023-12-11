@@ -7,6 +7,7 @@ import ReadBoardModal from "../modals/ReadBoardModal";
 import CreateBoardModal from "../modals/CreateBoardModal";
 
 const CommunityBoardTable = (props) => {
+    const [createModal, setCreateModal] = useState(false);
     const [checkAdmin, setCheckAdmin] = useState(true);
     const [boardIdx, setBoardIdx] = useState("");
     const [boardList, setBoardList] = useState([
@@ -172,6 +173,11 @@ const CommunityBoardTable = (props) => {
             <ReadBoardModal
                 boardIdx={boardIdx}
                 setBoardIdx={setBoardIdx}
+            />
+            <CreateBoardModal
+                createModal={createModal}
+                setCreateModal={setCreateModal}
+                topic={props.topic}
             />
         </>
     );
