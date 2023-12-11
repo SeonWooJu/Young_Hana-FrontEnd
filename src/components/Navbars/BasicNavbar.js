@@ -90,7 +90,7 @@ const BasicNavbar = () => {
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">게시판</span>
                     </DropdownToggle>
-                    <DropdownMenu>
+                    <DropdownMenu style={{"color":"black"}}>
                       <DropdownItem to="/board/1" tag={Link}>
                         <div>
                           <i className="fa fa-bell" />
