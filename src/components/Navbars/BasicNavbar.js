@@ -94,7 +94,7 @@ const BasicNavbar = () => {
                       <DropdownItem to="/board/1" tag={Link}>
                         <div>
                           <i className="fa fa-bell" />
-                          <span className="nav-link-inner--text d-lg-none ml-2 text-dark">
+                          <span className="nav-link-inner--text ml-2">
                             공지사항
                           </span>
                         </div>
@@ -102,7 +102,7 @@ const BasicNavbar = () => {
                       <DropdownItem to="/board/2" tag={Link}>
                         <div>
                           <i className="fa fa-question" />
-                          <span className="nav-link-inner--text d-lg-none ml-2 text-dark">
+                          <span className="nav-link-inner--text ml-2">
                             질문
                           </span>
                         </div>
@@ -110,7 +110,7 @@ const BasicNavbar = () => {
                       <DropdownItem to="/board/3" tag={Link}>
                         <div>
                           <i className="fa fa-space-shuttle" />
-                          <span className="nav-link-inner--text d-lg-none ml-2 text-dark">
+                          <span className="nav-link-inner--text ml-2">
                             자유
                           </span>
                         </div>
