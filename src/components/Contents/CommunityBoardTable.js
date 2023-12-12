@@ -43,7 +43,7 @@ const CommunityBoardTable = (props) => {
             .catch(() => {
 
             })
-    }, [props.topic, props.createModal])
+    }, [props.topic, createModal])
 
     const previous = () => {
         const start_ = start - 6;
@@ -90,7 +90,7 @@ const CommunityBoardTable = (props) => {
                                                 "float": "right",
                                                 "marginBottom": "10px"
                                             }}
-                                            onClick={() => props.setCreateModal(!props.createModal)}
+                                            onClick={() => setCreateModal(!createModal)}
                                         >
                                             게시글 작성
                                         </Button>
